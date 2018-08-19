@@ -9,6 +9,14 @@ $version = file_get_contents(__DIR__."/version.txt");
 
 require (__DIR__."/functions.php");
 
+// Check for translocation
+
+if (!@touch(__DIR__."/test")) {
+	alert("DropToPTP cannot run from the Downloads folder");
+	quitme();
+	die;
+	}
+
 // Prefs
 
 $prefs = __DIR__."/prefs.php";
@@ -35,6 +43,25 @@ if (!file_exists($prefs)) {
 	$p['premature'] = 0;
 	$p['max_size'] = 1000;
 	
+	}
+
+// Version check
+
+if (strpos(__FILE__,".app")) {
+
+	$checkfile = __DIR__."/vcheck";
+	
+	if (!file_exists($checkfile) | time()-@filemtime($checkfile) > 86400) {
+		$curr_version = file_get_contents("https://raw.githubusercontent.com/cylott/Minat/master/version.txt");
+		addline("Version check, me=".$version." latest=".$curr_version);
+		if ($curr_version > $version) {
+			if(askMulti("A new version of Minat is available", array("Skip","Download")) == 1) {
+				exec("open https://github.com/cylott/Minat");
+				quitme();
+				}
+			}
+		touch($checkfile);
+		}
 	}
 
 if ($p['mode'] != 1) { $p['premature'] = 1; addline("MODE ".$p['mode']." NOT YET IMPLEMENTED."); }
@@ -86,6 +113,11 @@ addline("---------------------------------------");
 // Loop over dragged directories
 
 foreach ($argv as $target) {
+
+	// If a single .flac file is dragged, treat as if its parent dir was dragged
+	//if (strtolower(pathinfo($target, PATHINFO_EXTENSION)) == "flac") {
+	//	$target = dirname($target);
+	//	}
 
 	$files = array();
 
@@ -201,7 +233,7 @@ foreach ($argv as $target) {
 				}
 			}
 		
-		$tagcmd = $p['soxbin']." --i ".escapeshellarg($file);
+		$tagcmd = $p['soxbin']." --i -a ".escapeshellarg($file);
 
 		if (!$p['disable_tags']) {
 			

@@ -133,7 +133,7 @@ function lameFlagBuilder($string) {
 	}
 
 function parseVorbis($string) {
-	preg_match_all("/\n([A-Z ]+)=(.*)/", $string, $matches);
+	preg_match_all("/(.*?)\s*=\s*(.*)/", $string, $matches);
 	if (count($matches)) {
 		foreach ($matches[1] as $key => $label) {
 			$out[strtolower($label)] = $matches[2][$key];
