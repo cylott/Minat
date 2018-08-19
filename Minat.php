@@ -12,7 +12,7 @@ require (__DIR__."/functions.php");
 // Check for translocation
 
 if (!@touch(__DIR__."/test")) {
-	alert("DropToPTP cannot run from the Downloads folder");
+	alert("Minat cannot run from the Downloads folder");
 	quitme();
 	die;
 	}
