@@ -9,7 +9,7 @@ Support is planned for two other operations:
 * Generate specs from audio files supported by sox
 * Rename folders based on the tags of the audio files inside
 
-* **⇩ [Download Minat 0.1.4](https://github.com/)**
+* **⇩ [Download Minat 0.1.4](https://github.com/cylott/Minat/releases/download/0.1.4/Minat.app.zip)**
 
 ## Screenshot
 
