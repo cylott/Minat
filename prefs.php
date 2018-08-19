@@ -1,0 +1,1 @@
+a:12:{s:4:"mode";i:1;s:8:"lameopts";s:29:"-h -b 320 --ignore-tag-errors";s:5:"check";i:0;s:10:"postflight";i:0;s:7:"handler";s:24:"/Applications/iTunes.app";s:4:"dest";i:1;s:8:"destpath";s:0:"";s:9:"stay_open";i:1;s:4:"ding";i:1;s:8:"warn_art";i:0;s:9:"spec_dims";a:2:{i:0;s:3:"900";i:1;s:4:"1400";}s:8:"template";s:48:"^ARTIST^ - ^YEAR^ - ^ALBUM^ {LABEL CAT} [FORMAT]";}
