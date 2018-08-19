@@ -2,7 +2,7 @@
 
 # Minat
 
-**Minat** is a lightweight, multithreaded transcoder for Mac OS. Minat supports one operation: transcoding flac to mp3, preserving tags and album artwork. Written in PHP, Minat is lightweight and easy to modify.
+**Minat** is a simple multithreaded audio transcoder for Mac OS. Minat supports one operation: transcoding flac to mp3, preserving tags and album artwork. Written in PHP, Minat is lightweight and easy to modify.
 
 Support is planned for two other operations:
 
