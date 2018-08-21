@@ -1,4 +1,4 @@
-<?
+<?php
 
 // Functions
 
@@ -6,8 +6,8 @@ function findCover($target) {
 
 	// Try to find properly named files (prefer newest)
 
-	$covers = array("folder","cover","front","Folder","Cover","Front","FOLDER","COVER","FRONT","AlbumArt");
-	$exts = array("jpg","jpeg","png","JPG","JPEG","PNG","Jpg","Jpeg");
+	$covers = array("Folder","Cover","Front","FOLDER","COVER","FRONT","folder","cover","front","AlbumArt");
+	$exts = array("Jpg","Jpeg","JPG","JPEG","PNG","jpg","jpeg","png");
 	
 	$found = array();
 	

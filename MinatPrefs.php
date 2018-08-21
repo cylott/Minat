@@ -1,4 +1,4 @@
-<?
+<?php
 
 // MinatPrefs 0.1.0
 // 

@@ -1,4 +1,4 @@
-<?
+<?php
 
 // Minat
 // Minat Is Not a Transcoder
